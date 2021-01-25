@@ -1,0 +1,47 @@
+1.ubuntu与windows时间同步
+	安装ntpdate：
+    	sudo apt-get install ntpdate
+	设置校正服务器：
+    	sudo ntpdate time.windows.com
+	设置硬件时间为本地时间：
+    	sudo hwclock --localtime --systohc
+2.安装Qt creaytor代码编辑器
+ 	sudo apt-get install qt5-default qtcreator -y
+3.安装typora
+	wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add - # 添加公钥
+	sudo add-apt-repository 'deb https://typora.io/linux ./' # 添加typora仓库
+	sudo apt-get update 
+	sudo apt-get install typora # 安装typora 
+4.Ubuntu下多版本OpenCV共存和切换
+    （1）安装依赖包
+	sudo apt-get install build-essential
+	sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+	sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+    （2）编译安装OpenCV
+	cd opencv-2.4.9
+	mkdir build
+	cd build
+	mkdir installed
+	cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=~/opencv-2.4.9/build/installed ..
+	sudo make -j4
+	sudo make install
+    (3)多版本OpenCV切换
+	gedit ~/.bashrc      #打开~/.bashrc
+	在文件末尾增加以下内容
+	export PKG_CONFIG_PATH=/home/jwu/opencv-2.4.9/build/installed/lib/pkgconfig
+	export LD_LIBRARY_PATH=/home/jwu/opencv-2.4.9/build/installed/lib
+	更新~/.bashrc
+	source ~/.bashrc 
+	查询OpenCV版本
+	pkg-config --modversion opencv
+    (4)选择opencv版本编译（CMakeList）
+       set(OpenCV_DIR /home/jwu/opencv-3.4.5/build)    #find_package()之前加上
+5.ubuntu安装谷歌拼音输入法
+	sudo apt install fcitx
+	im-config         #配置输入法后重启
+	sudo apt install fcitx-googlepinyin -y
+	fcitx-config-gtk3
+6.ubuntu安装notepad++
+	sudo add-apt-repository  ppa:notepadqq-team/notepadqq 
+	sudo apt-get update
+	sudo apt-get install notepadqq
