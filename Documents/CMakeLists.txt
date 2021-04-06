@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.5.1)
+project(answer_cpp)
+set(CMAKE_CXX_STANDARD 14)
+
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread -Wall -Ofast -Wfatal-errors -D_MWAITXINTRIN_H_INCLUDED")
+
+set(OpenCV_DIR /home/jwu/opencv-3.4.5/build)
+find_package(OpenCV)
+include_directories(OpenCV_INCLUDE_DIRS)
+
+add_executable(answer_1 answer_1.cpp)
+add_executable(answer_2 answer_2.cpp)
+add_executable(answer_3 answer_3.cpp)
+add_executable(answer_4 answer_4.cpp)
+add_executable(answer_5 answer_5.cpp)
+add_executable(answer_6 answer_6.cpp)
+add_executable(answer_7 answer_7.cpp)
+add_executable(answer_8 answer_8.cpp)
+add_executable(answer_9 answer_9.cpp)
+add_executable(answer_10 answer_10.cpp)
+
+target_link_libraries(answer_1 ${OpenCV_LIBS})
+target_link_libraries(answer_2 ${OpenCV_LIBS})
+target_link_libraries(answer_3 ${OpenCV_LIBS})
+target_link_libraries(answer_4 ${OpenCV_LIBS})
+target_link_libraries(answer_5 ${OpenCV_LIBS})
+target_link_libraries(answer_6 ${OpenCV_LIBS})
+target_link_libraries(answer_7 ${OpenCV_LIBS})
+target_link_libraries(answer_8 ${OpenCV_LIBS})
+target_link_libraries(answer_9 ${OpenCV_LIBS})
+target_link_libraries(answer_10 ${OpenCV_LIBS})
