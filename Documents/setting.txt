@@ -45,3 +45,8 @@
 	sudo add-apt-repository  ppa:notepadqq-team/notepadqq 
 	sudo apt-get update
 	sudo apt-get install notepadqq
+7.ubuntu设置vscode的opencv环境配置
+	安装c/c++插件，新建一个文件夹用vscode打开
+	c++编译环境(launch.json):Debug->creat a launch.json-> C++(GDB/LLDB)->g++ build and debug active file
+	task.json:F5->提示信息中选择Configure Task->creat a task.json file->Msbuild
+	c_cpp_properties.json:Ctrl + Shift + P ->c/c++ Edit configurations (JSON)
