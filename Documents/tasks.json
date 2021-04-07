@@ -14,7 +14,7 @@
                 "-I", "/home/jwu/opencv-3.4.5/build/installed/include",
                 "-I", "/home/jwu/opencv-3.4.5/build/installed/include/opencv",
                 "-I", "/home/jwu/opencv-3.4.5/build/installed/include/opencv2",
-                "-L", "/home/jwu/opencv-3.4.5/build/lib",
+                "-L", "/home/jwu/opencv-3.4.5/build/installed/lib",
                 "-l", "opencv_core",
                 "-l", "opencv_imgproc",
                 "-l", "opencv_imgcodecs",
